@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Amirtha - Frontend Developer Portfolio showcasing web development projects and skills">
+    <meta name="keywords" content="frontend developer, web development, portfolio, HTML, CSS, JavaScript">
+    <meta name="author" content="Amirtha">
+    <meta property="og:title" content="Amirtha - Frontend Developer">
+    <meta property="og:description" content="Frontend Developer Portfolio showcasing web development projects and skills">
+    <meta property="og:type" content="website">
+    <title>Amirtha - Frontend Developer</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="background-video" poster="fallback-bg.jpg">
+            <source src="C:\Users\HP\Downloads\video.mp4" type="video/mp4">
+            <div class="fallback-text">
+                <p>Welcome to my portfolio! The video background couldn't be loaded, but feel free to explore my work.</p>
+            </div>
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container fade-in">
+            <h2>Hey <span class="wave">👋</span></h2>
+            <h1>I'm <span class="highlight">Amirtha</span></h1>
+            <h3>Frontend Developer</h3>
+            <div class="hero-cta">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container slide-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Amirtha">
+                </div>
+                <div class="about-text">
+                    <p>Programming has become my new love, and I'm starting to get the hang of it! 🚀</p>
+                    <p>I have expertise in essential languages such as <span class="tech">HTML, CSS, JAVASCRIPT & JAVA</span>.</p>
+                    <p>I enjoy exploring cutting-edge <span class="tech">Web development and server-side programming</span>.</p>
+                    <p>I'm enthusiastic about utilizing backend technologies like <span class="tech">Java</span> and alongside contemporary JavaScript libraries and frameworks such as <span class="tech">React.js, Angular.js</span> to develop impactful products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container slide-in">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>YouTube AI Comment Moderator</h3>
+                        <p>NLP tool that flags & removes harassment comments using advanced Natural Language Processing.</p>
+                        <div class="tech-stack">
+                            <span class="badge">Python</span>
+                            <span class="badge">NLP</span>
+                            <span class="badge">ML</span>
+                        </div>
+                        <a href="https://github.com/amirthad25/Youtube-Ai-Comment-Moderator" class="btn" target="_blank">See More</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Lunar Crater Detection</h3>
+                        <p>Uses YOLOv12 to detect and measure craters in lunar images with computer vision.</p>
+                        <div class="tech-stack">
+                            <span class="badge">Python</span>
+                            <span class="badge">CV</span>
+                            <span class="badge">YOLO</span>
+                        </div>
+                        <a href="https://github.com/amirthad25/Moon-Crater-Detection" class="btn" target="_blank">See More</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Phishing URL Detector</h3>
+                        <p>ML-based web tool that detects phishing URLs by analyzing domain features and patterns.</p>
+                        <div class="tech-stack">
+                            <span class="badge">Python</span>
+                            <span class="badge">ML</span>
+                            <span class="badge">Security</span>
+                        </div>
+                        <a href="https://github.com/amirthad25/Phishing-Link-Detector" class="btn" target="_blank">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container fade-in">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/amirthad25" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/amirtha-thennavan-b6b5962a7" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>© 2024 Amirtha. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
