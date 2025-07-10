@@ -8,7 +8,7 @@ import type { Engine } from "tsparticles-engine";
 import FloatingLaptop from './components/FloatingLaptop';
 
 // Import react-icons
-import { AiOutlineHome, AiOutlineUser, AiOutlineProject, AiOutlineTrophy, AiOutlineMail, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineHome, AiOutlineUser, AiOutlineProject, AiOutlineTrophy, AiOutlineMail, AiOutlineMenu, AiOutlineClose, AiOutlineFilePdf } from 'react-icons/ai';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import { FaGraduationCap, FaCalendarAlt, FaUniversity, FaStar } from 'react-icons/fa';
 import CodingIllustration from './components/CodingIllustration';
@@ -184,6 +184,9 @@ const App: FC = () => {
           <a href="#accomplishments" className="nav-item" onClick={e => { e.preventDefault(); handleNavClick('accomplishments'); }}>
             <AiOutlineTrophy /> Accomplishments
           </a>
+          <a href="/Amirtha Resume.pdf" className="nav-item" target="_blank" rel="noopener noreferrer">
+            <AiOutlineFilePdf /> Resume
+          </a>
           <a href="#education" className="nav-item" onClick={e => { e.preventDefault(); handleNavClick('education'); }}>
             <FaGraduationCap /> Education
           </a>
@@ -215,6 +218,9 @@ const App: FC = () => {
               </a>
               <a href="#contact" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('contact'); setMobileMenuOpen(false); }}>
                 <AiOutlineMail /> Contact
+              </a>
+              <a href="/Amirtha Resume.pdf" className="mobile-nav-item" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                <AiOutlineFilePdf /> Resume
               </a>
             </nav>
           </div>
