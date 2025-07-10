@@ -8,7 +8,7 @@ import type { Engine } from "tsparticles-engine";
 import FloatingLaptop from './components/FloatingLaptop';
 
 // Import react-icons
-import { AiOutlineHome, AiOutlineUser, AiOutlineProject, AiOutlineTrophy, AiOutlineMail } from 'react-icons/ai';
+import { AiOutlineHome, AiOutlineUser, AiOutlineProject, AiOutlineTrophy, AiOutlineMail, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import { FaGraduationCap, FaCalendarAlt, FaUniversity, FaStar } from 'react-icons/fa';
 import CodingIllustration from './components/CodingIllustration';
@@ -108,6 +108,7 @@ const App: FC = () => {
   };
 
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="App">
@@ -159,6 +160,17 @@ const App: FC = () => {
 
       {/* Navigation */}
       <nav className="navbar">
+        {/* Hamburger icon for mobile only */}
+        <button
+          className="hamburger-menu"
+          aria-label="Open navigation menu"
+          onClick={() => setMobileMenuOpen(true)}
+          style={{ display: 'none' }}
+        >
+          <span className="hamburger-bar" />
+          <span className="hamburger-bar" />
+          <span className="hamburger-bar" />
+        </button>
         <div className="nav-links">
           <a href="#home" className="nav-item" onClick={e => { e.preventDefault(); handleNavClick('home'); }}>
             <AiOutlineHome /> Home
@@ -179,6 +191,34 @@ const App: FC = () => {
             <AiOutlineMail /> Contact
           </a>
         </div>
+        {/* Mobile Side Drawer */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)}>
+            <nav className="mobile-menu" onClick={e => e.stopPropagation()}>
+              <button className="close-menu" aria-label="Close navigation menu" onClick={() => setMobileMenuOpen(false)}>
+                <AiOutlineClose />
+              </button>
+              <a href="#home" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('home'); setMobileMenuOpen(false); }}>
+                <AiOutlineHome /> Home
+              </a>
+              <a href="#about" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('about'); setMobileMenuOpen(false); }}>
+                <AiOutlineUser /> About
+              </a>
+              <a href="#projects" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('projects'); setMobileMenuOpen(false); }}>
+                <AiOutlineProject /> Projects
+              </a>
+              <a href="#accomplishments" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('accomplishments'); setMobileMenuOpen(false); }}>
+                <AiOutlineTrophy /> Accomplishments
+              </a>
+              <a href="#education" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('education'); setMobileMenuOpen(false); }}>
+                <FaGraduationCap /> Education
+              </a>
+              <a href="#contact" className="mobile-nav-item" onClick={e => { e.preventDefault(); handleNavClick('contact'); setMobileMenuOpen(false); }}>
+                <AiOutlineMail /> Contact
+              </a>
+            </nav>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
